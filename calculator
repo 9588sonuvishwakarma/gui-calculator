@@ -1,0 +1,148 @@
+from tkinter import *
+root = Tk()
+root.geometry("350x421")
+
+root.configure(bg="pink")
+root.title("CALCULATOR WITH SONU")
+# root.wm_iconbitmap("Pictures/dip.gif")
+
+
+
+
+
+def click(event):
+
+    #TODO: global screanvar
+    text = event.widget.cget("text") #this is used to print button value in code
+    print(text)#this is used to print button value in code
+
+#fuction
+    if text =="=":
+        if screanvar.get().isdigit():
+            value = int(screanvar.get())
+        else:
+            value = eval(screanvar.get())
+        screanvar.set(value)
+        screan.update()
+
+
+
+
+    elif text =="c":
+        screanvar.set("")
+        screan.update()
+
+
+
+
+    else:
+
+
+        screanvar.set(screanvar.get() + text) #this is used to button value on screan
+        screan.update() #this is used to button value on screan
+
+
+
+screanvar = StringVar()
+screanvar.set("")
+screan = Entry(root, textvariable=screanvar,font="lucida 30 bold",bg="yellow",fg="red")
+screan.pack(fill=X,pady=10,padx=10,ipadx=10,ipady=10)
+
+f = Frame(root)
+f.pack()
+
+#button start
+b = Button(f, text="9",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="8",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="7",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+
+f = Frame(root)
+f.pack()
+
+#button start
+b = Button(f, text="6",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="5",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="4",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+f = Frame(root)
+f.pack()
+
+#button start
+b = Button(f, text="3",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="2",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="1",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+f = Frame(root)
+f.pack()
+
+#button start
+b = Button(f, text="0",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="+",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="-",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+f = Frame(root)
+f.pack()
+
+#button start
+b = Button(f, text="*",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="/",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="c",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+f = Frame(root)
+f.pack()
+
+#button start
+b = Button(f, text="%",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+b = Button(f, text="=",padx=18,pady=12,font="lucida 20 bold")
+b.pack(side=LEFT,padx=18,pady=12)
+b.bind("<Button-1>",click)
+
+
+
+
+
+root.mainloop()
